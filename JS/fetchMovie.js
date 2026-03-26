@@ -27,8 +27,16 @@ class FetchMovie {
         if (data.type === "embed") {
             embedUi.init(data); // Call the instance method
         }
+        if(data.type === "stream"){
+            streamUI.init(data)
+        }
     }
         
+}
+class streamUI{
+    init(data){
+        
+    }
 }
 
 class EmbedUI {
@@ -87,6 +95,7 @@ allowfullscreen allow="autoplay; encrypted-media"></iframe>      </div>
         const iframe = document.querySelector(".iframe");
         
         if (serverId === "server_1") {
+            
             iframe.src = this.movie.embed;
         } else {
             iframe.src = `${this.movie.embed}?server=2`;

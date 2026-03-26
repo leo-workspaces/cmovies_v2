@@ -224,7 +224,28 @@
 </head>
 
 <body>
-    
+
+<nav class="navbar">
+    <div class="nav-left">
+        <a href="#" class="browse-btn">
+            <i class="fa-solid fa-play"></i>
+            <b>Browse</b>
+        </a>
+    </div>
+
+    <div class="nav-center">
+        <img src="/IMG/logo_m.png" alt="Logo" class="nav-logo">
+    </div>
+
+    <div class="nav-right">
+        <button class="icon-btn search-btn">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <div class="profile-icon">
+            <i class="fa-solid fa-face-smile"></i>
+        </div>
+    </div>
+</nav>
   <script type="module">
     import { fetchmovie } from "/JS/fetchMovie.js";
     fetchmovie.fetchWorker();
