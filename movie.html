@@ -224,61 +224,11 @@
 </head>
 
 <body>
-
-<nav class="navbar">
-    <div class="nav-left">
-        <a href="#" class="browse-btn">
-            <i class="fa-solid fa-play"></i>
-           <b> Browse</b>
-        </a>
-    </div>
-
-    <div class="nav-center">
-        <img src="/IMG/logo_m.png" alt="Logo" class="nav-logo">
-    </div>
-
-    <div class="nav-right">
-        <button class="icon-btn">
-            <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-        <div class="profile-icon">
-            <i class="fa-solid fa-face-smile"></i>
-        </div>
-    </div>
-</nav>
-  <h3 id="title">Title||movie</h3>
-<div class="video-card">
-      
-    <div class="video-container">
-      
-        <iframe id="player" poster="your-thumbnail.jpg" src="https://rrr.prime37node.site/pz78/c5/h6a90f70b8d237f94866b6cfc2c7e06afdb8423c6639e9e32ba74387520ba61a4ef40899eb0ee7bdfc502a43593daa34230432706379458e1478bc99c18fc5cfe4c1a/4/aGxzLzEwODAvMTA4MA,Ktm0Vt9-cJyXbGG_O3gV_5vGK-kpiQ.m3u8">
-            
-        </iframe>
-        
-        <div class="play-overlay" onclick="togglePlay()">
-            <div class="play-circle">
-                <i class="fa-solid fa-play" id="playIcon"></i>
-            </div>
-        </div>
-    </div>
-
-    <div class="controls-bar">
-        <div class="left-controls">
-            <i class="fa-solid fa-moon"></i>
-            <i class="fa-solid fa-circle-play"></i>
-            <i class="fa-solid fa-forward-step highlight"></i>
-        </div>
-        <div class="right-controls">
-            <i class="fa-solid fa-bookmark"></i>
-            <i class="fa-solid fa-triangle-exclamation"></i>
-        </div>
-    </div>
-</div>
-<div class="right-controls">
-    <i class="fa-solid fa-expand highlight" onclick="toggleSize()" id="sizeBtn" title="Toggle Fullscreen"></i>
-    <i class="fa-solid fa-bookmark"></i>
-    <i class="fa-solid fa-triangle-exclamation"></i>
-</div>
+  <script type="module">
+    import { fetchmovie } from "/JS/fetchMovie.js";
+    fetchmovie.fetchWorker();
+    
+</script>
 
 <script>
     const iframe = document.getElementById("player");
@@ -321,11 +271,7 @@
         }
     };
 </script>
-  <script type="module">
-    import { fetchmovie } from "/JS/fetchMovie.js";
-    fetchmovie.fetchWorker();
-    
-</script>
+
 
 </body>
 </html>
