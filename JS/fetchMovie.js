@@ -37,14 +37,14 @@ class EmbedUI {
         this.display();
     }
 
-    display() {
+  async  display() {
         const div = document.createElement("div");
         div.innerHTML = `
             <h3 id="title">${this.movie.title || 'Movie'}</h3>
             <div class="video-card">
                 <div class="video-container">
-                    <iframe id="player" class="iframe" src="${this.movie.embed}"></iframe>
-                </div>
+                <iframe id="player" class="iframe" src="${this.movie.embed}" 
+allowfullscreen allow="autoplay; encrypted-media"></iframe>      </div>
                    <div class="controls-bar">
         <div class="left-controls">
             <div id="expand_iframe">
@@ -75,6 +75,7 @@ class EmbedUI {
 </div>`;
         
         document.body.appendChild(div);
+        await reloadIframeThreeTimes("player")
 
         // Fix: Bind "this" so the function can access this.movie
         document.getElementById("server_1").addEventListener("click", (e) => this.serverChange(e));
@@ -92,7 +93,22 @@ class EmbedUI {
         }
     }
 }
+function reloadIframeThreeTimes(iframeId) {
+  const iframe = document.getElementById(iframeId);
+  if (!iframe) return;
 
+  let count = 0;
+
+  const interval = setInterval(() => {
+    iframe.src = iframe.src; // reload
+      
+    count++;
+    console.log ("attempt ",count)
+    if (count >= 2) {
+      clearInterval(interval);
+    }
+  }, 10);
+}
 // Single Export Instances
 export const embedUi = new EmbedUI();
 export const fetchmovie = new FetchMovie();
