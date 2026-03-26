@@ -59,13 +59,20 @@ class EmbedUI {
         </div>
     </div>
 </div>
-                <p class="server-hint">If the current server is not working, please try switching to other servers.</p>
-            <div class="server-section">
-                <div class="server-switcher">
-                    <button id="server_1" class="server-btn active">Server 1</button>
-                    <button id="server_2" class="server-btn">Server 2</button>
-                </div>
-            </div>`;
+              <div class="server-section">
+    <p class="server-hint">If the current server is not working, please try switching to other servers.</p>
+    
+    <div class="server-switcher">
+        <button id="server_1" class="server-btn active">
+            <i class="fa-solid fa-cloud"></i>
+            <span>Server 1</span>
+        </button>
+        <button id="server_2" class="server-btn">
+            <i class="fa-solid fa-cloud"></i>
+            <span>Server 2</span>
+        </button>
+    </div>
+</div>`;
         
         document.body.appendChild(div);
 
