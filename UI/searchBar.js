@@ -55,7 +55,7 @@ div.addEventListener("click",()=>{
     if(urlRedirect.includes(" ") || urlRedirect.includes(":")){
         urlRedirect = urlRedirect.toLowerCase().replace(" ","-").replace(":","-")}
         
-    window.location.href=`/movie.html?movie=${urlRedirect}&id=${movie.imdbID}`
+    window.location.href=`/movie?movie=${urlRedirect}&id=${movie.imdbID}`
     
     
     
